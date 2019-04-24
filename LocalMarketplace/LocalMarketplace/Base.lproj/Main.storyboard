@@ -31,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
-                                    <segue destination="K6Y-dW-KEr" kind="show" id="ALz-49-haA"/>
+                                    <segue destination="K6Y-dW-KEr" kind="show" identifier="signup" id="ALz-49-haA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTP-rG-iOG">
@@ -49,6 +49,7 @@
                     <connections>
                         <outlet property="logInButton" destination="bSD-js-wPr" id="EvT-3r-bzx"/>
                         <outlet property="signInButton" destination="eg0-ek-wL6" id="AxZ-Vf-Gcm"/>
+                        <segue destination="hCv-Ru-nrQ" kind="show" identifier="loggedIn" id="unC-Iy-h1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AE-gv-M1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="CANCEL"/>
                                 <connections>
-                                    <segue destination="wGO-6Z-5AZ" kind="show" id="SZK-up-287"/>
+                                    <segue destination="wGO-6Z-5AZ" kind="show" identifier="cancel" id="SZK-up-287"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgB-a3-Zzd">
@@ -83,7 +84,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SIGN UP"/>
                                 <connections>
-                                    <segue destination="wGO-6Z-5AZ" kind="show" id="fm7-FH-kZx"/>
+                                    <segue destination="wGO-6Z-5AZ" kind="show" identifier="signupConfirm" id="fm7-FH-kZx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,6 +136,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBP-x9-xUR">
+                                <rect key="frame" x="0.0" y="192" width="375" height="426"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="WC0-ss-QQu" kind="embed" id="A2D-mN-bWp"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="B71-Po-FPd"/>
@@ -143,11 +151,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snt-By-7nO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="1117"/>
+            <point key="canvasLocation" x="669.60000000000002" y="1116.7916041979011"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="hWE-lj-erS">
+            <objects>
+                <tableViewController id="WC0-ss-QQu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cz8-5C-B4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="U0s-rB-UIJ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0s-rB-UIJ" id="qMe-y2-Lhp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WC0-ss-QQu" id="vpe-Y0-xEs"/>
+                            <outlet property="delegate" destination="WC0-ss-QQu" id="SWd-Vy-OD4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPR-HW-tYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="1778"/>
         </scene>
         <!--Buy-->
         <scene sceneID="kWL-cO-KqQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2U-y8-OjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pGc-vv-yBj" customClass="BuyViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JEY-nJ-8aY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -160,15 +197,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-ou-XCz">
+                                <rect key="frame" x="0.0" y="165" width="375" height="453"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="GaU-QK-Huu" kind="embed" id="7bL-Mu-dOH"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7yB-6P-Bui"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Buy" id="fDO-JA-Ccc"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k2U-y8-OjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="97"/>
+            <point key="canvasLocation" x="1525.5999999999999" y="96.7016491754123"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iXi-WX-fLa">
@@ -187,10 +230,45 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI3-Jw-COW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="304"/>
+            <point key="canvasLocation" x="670" y="303"/>
+        </scene>
+        <!--Buy Collection View Controller-->
+        <scene sceneID="8mE-LJ-o43">
+            <objects>
+                <collectionViewController id="GaU-QK-Huu" customClass="BuyCollectionViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZHo-K2-osl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="453"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hvx-sC-Em2">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mwD-uW-ZhF">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="GaU-QK-Huu" id="eLa-Aw-MT6"/>
+                            <outlet property="delegate" destination="GaU-QK-Huu" id="kyD-cq-vVP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbZ-S7-ZKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2690" y="97"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="unC-Iy-h1X"/>
         <segue reference="fm7-FH-kZx"/>
     </inferredMetricsTieBreakers>
 </document>

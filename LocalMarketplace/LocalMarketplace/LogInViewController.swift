@@ -26,20 +26,39 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // If the user is already logged in, segue to the buy view.
+        if (false) {
+            self.performSegue(withIdentifier: "loggedin", sender: nil)
+        }
+    }
+    
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let identity = segue.identifier
-        let dest = segue.destination as? SignUpViewController
+        let dest = segue.destination
         
+        if identity == "loggedIn" {
+            print("loggedIn")
+        }
         
+        if identity == "login" {
+            print("login")
+        }
+        
+        if identity == "signup" {
+            print("signup")
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }

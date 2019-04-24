@@ -12,6 +12,7 @@
 		637B26B9226F5791001D42F6 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B8226F5791001D42F6 /* BuyViewController.swift */; };
 		637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26BA226F579F001D42F6 /* SellViewController.swift */; };
 		637B26BD226F57AE001D42F6 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26BC226F57AE001D42F6 /* MessagesViewController.swift */; };
+		638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CB27722710C77005CB451 /* BuyCollectionViewController.swift */; };
 		639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */; };
 		639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9CF226E5C3F0062E2EA /* ViewController.swift */; };
 		639FA9D3226E5C3F0062E2EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FA9D1226E5C3F0062E2EA /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		637B26B8226F5791001D42F6 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		637B26BA226F579F001D42F6 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		637B26BC226F57AE001D42F6 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		638CB27722710C77005CB451 /* BuyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCollectionViewController.swift; sourceTree = "<group>"; };
 		639FA9CA226E5C3F0062E2EA /* LocalMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639FA9CF226E5C3F0062E2EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */,
 				639FA9CF226E5C3F0062E2EA /* ViewController.swift */,
 				639FA9D1226E5C3F0062E2EA /* Main.storyboard */,
+				638CB27722710C77005CB451 /* BuyCollectionViewController.swift */,
 				637B26B8226F5791001D42F6 /* BuyViewController.swift */,
 				637B26BA226F579F001D42F6 /* SellViewController.swift */,
 				637B26BC226F57AE001D42F6 /* MessagesViewController.swift */,
@@ -278,6 +281,7 @@
 				637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */,
 				639FA9D6226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld in Sources */,
 				639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */,
+				638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */,
 				639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */,
 				637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */,
 				637B26BD226F57AE001D42F6 /* MessagesViewController.swift in Sources */,
