@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6340C0AC227261920035F3FA /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340C0AB227261920035F3FA /* MessagesTableViewController.swift */; };
 		637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B4226F4D7E001D42F6 /* LogInViewController.swift */; };
 		637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B6226F52D0001D42F6 /* SignUpViewController.swift */; };
 		637B26B9226F5791001D42F6 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B8226F5791001D42F6 /* BuyViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6340C0AB227261920035F3FA /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		637B26B4226F4D7E001D42F6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		637B26B6226F52D0001D42F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		637B26B8226F5791001D42F6 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */,
 				639FA9CF226E5C3F0062E2EA /* ViewController.swift */,
 				639FA9D1226E5C3F0062E2EA /* Main.storyboard */,
+				6340C0AB227261920035F3FA /* MessagesTableViewController.swift */,
 				638CB27722710C77005CB451 /* BuyCollectionViewController.swift */,
 				637B26B8226F5791001D42F6 /* BuyViewController.swift */,
 				637B26BA226F579F001D42F6 /* SellViewController.swift */,
@@ -286,6 +289,7 @@
 				637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */,
 				637B26BD226F57AE001D42F6 /* MessagesViewController.swift in Sources */,
 				637B26B9226F5791001D42F6 /* BuyViewController.swift in Sources */,
+				6340C0AC227261920035F3FA /* MessagesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
