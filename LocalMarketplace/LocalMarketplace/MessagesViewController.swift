@@ -18,7 +18,9 @@
 import UIKit
 
 class MessagesViewController: UIViewController {
-
+    // var currentUser: User
+    // user model needs to be implemented
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

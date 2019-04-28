@@ -10,9 +10,8 @@ import UIKit
 
 class MessagesTableViewController: UITableViewController {
 
-    let user = "user"
-    
-    // Variable for a user object so that we fetch the conversations this specific user has with other users.
+    // var currentUser: User
+    // user model needs to be implemented
     
     var data = [["Hey. How much for those shoes man?"]]
     

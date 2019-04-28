@@ -21,8 +21,24 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    // var currentUser: User
+    // user model needs to be implemented
+    
+    @IBOutlet weak var logoImage: UIImageView!
+    
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBAction func logInButtonPress(_ sender: Any) {
+        // Check if user + pass combo is correct.
+        print("log in button pressed")
+    }
+    
+    @IBAction func signUpButtonPress(_ sender: Any) {
+        print("sign up button pressed")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +53,23 @@ class LogInViewController: UIViewController {
         if (false) {
             self.performSegue(withIdentifier: "loggedin", sender: nil)
         }
+        
+        logInButton.layer.borderWidth = 1
+        logInButton.layer.borderColor = UIColor.black.cgColor
+        logInButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        logInButton.layer.backgroundColor = UIColor.black.cgColor
+        
+        signInButton.layer.borderWidth = 1
+        signInButton.layer.borderColor = UIColor.black.cgColor
+        signInButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signInButton.layer.backgroundColor = UIColor.black.cgColor
+        
+        usernameField.layer.borderColor = UIColor.black.cgColor
+        usernameField.layer.borderWidth = 1
+        
+        passwordField.layer.borderColor = UIColor.black.cgColor
+        passwordField.layer.borderWidth = 1
+        
     }
     
     
@@ -61,6 +94,21 @@ class LogInViewController: UIViewController {
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    }
+    
+    // Conditional segue for login. Only segues to app if user/pass combo is correct.
+    //To be updated when user model and database is setup. Right now, use "user" and "pass" as values.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "login" {
+            if (usernameField.text == "user" && passwordField.text == "pass"){
+                print("correct user/pass, segue to app")
+                return true
+            }else{
+                print("incorrect user/pass, will not segue")
+                return false
+            }
+        }
+        return true
     }
 
 }
