@@ -46,6 +46,11 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
         if (segue.identifier == containerSegueName){
             containerViewController = segue.destination as? BuyViewController
         }
+        
+        if (segue.identifier == "ItemSegue"){
+            let destination = segue.destination as! ItemViewController
+            print("Segue from item cell to item")
+        }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
@@ -109,7 +114,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
     }
     */
 
-    /*
+    
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return false
@@ -120,8 +125,11 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
     }
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
+    	
     }
-    */
-
+ 
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ItemSegue", sender: self)
+        print("hello")
+    }
 }

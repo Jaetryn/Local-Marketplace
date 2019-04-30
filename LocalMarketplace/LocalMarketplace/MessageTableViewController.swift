@@ -1,28 +1,20 @@
 //
-//  MessagesTableViewController.swift
+//  MessageTableViewController.swift
 //  LocalMarketplace
 //
-//  Created by user150985 on 4/25/19.
+//  Created by user150985 on 4/30/19.
 //  Copyright © 2019 John Trinh. All rights reserved.
 //
 
 import UIKit
 
-class MessagesTableViewController: UITableViewController {
+class MessageTableViewController: UITableViewController {
+    
+    var conversation: [String] = []
 
-    // var currentUser: User
-    // user model needs to be implemented
-    
-    // Data should be a 2d array of conversation objects. Conversation objects should contain an array of messages with an associated value for each message depicting who the "sender" is. And (optional) time when the message was sent. I need at least the sender information so I can format the message view accordingly.
-    
-    var data = [["Message 1", "hey", "sup lol", "bro how much for that supreme shirt"],["Message 2"],["Message 3"]] // Placeholder.
-    
-    // Populate this 2D array with an array of conversations -> the conversation. (Based on user variable)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,18 +31,16 @@ class MessagesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return conversation.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
 
         // Configure the cell...
 
-        cell.textLabel?.text = data[indexPath.item][0]
-
-        
+        cell.textLabel?.text = conversation[indexPath.item]
         return cell
     }
  
@@ -90,21 +80,14 @@ class MessagesTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identity = segue.identifier
-        let dest = segue.destination as! MessageTableViewController
-        
-        if identity == "MessageSegue" {
-            dest.conversation = data[0]
-        }
-
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
- 
+    */
 
 }

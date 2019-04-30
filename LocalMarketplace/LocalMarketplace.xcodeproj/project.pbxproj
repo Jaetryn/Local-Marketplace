@@ -23,6 +23,8 @@
 		639FA9DB226E5C410062E2EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FA9D9226E5C410062E2EA /* LaunchScreen.storyboard */; };
 		639FA9E6226E5C410062E2EA /* LocalMarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9E5226E5C410062E2EA /* LocalMarketplaceTests.swift */; };
 		639FA9F1226E5C410062E2EA /* LocalMarketplaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */; };
+		63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */; };
+		63D9372D2278D26B00D8D830 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D9372C2278D26B00D8D830 /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		639FA9EC226E5C410062E2EA /* LocalMarketplaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalMarketplaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMarketplaceUITests.swift; sourceTree = "<group>"; };
 		639FA9F2226E5C410062E2EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		63D9372C2278D26B00D8D830 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +119,12 @@
 		639FA9CC226E5C3F0062E2EA /* LocalMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */,
 				63540041227541F0006C706D /* logo.png */,
 				639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */,
 				639FA9CF226E5C3F0062E2EA /* ViewController.swift */,
 				639FA9D1226E5C3F0062E2EA /* Main.storyboard */,
+				63D9372C2278D26B00D8D830 /* ItemViewController.swift */,
 				6340C0AB227261920035F3FA /* MessagesTableViewController.swift */,
 				638CB27722710C77005CB451 /* BuyCollectionViewController.swift */,
 				637B26B8226F5791001D42F6 /* BuyViewController.swift */,
@@ -286,8 +292,10 @@
 			files = (
 				637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */,
 				637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */,
+				63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */,
 				639FA9D6226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld in Sources */,
 				639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */,
+				63D9372D2278D26B00D8D830 /* ItemViewController.swift in Sources */,
 				638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */,
 				639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */,
 				637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */,

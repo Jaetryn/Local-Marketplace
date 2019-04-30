@@ -236,6 +236,23 @@
             </objects>
             <point key="canvasLocation" x="1524.6376811594205" y="-716.51785714285711"/>
         </scene>
+        <!--Messages-->
+        <scene sceneID="6J4-gR-lmy">
+            <objects>
+                <navigationController id="hst-yU-9Pb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Messages" id="4Nf-Uc-9gk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UOw-CN-Iut">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ISb-KW-iux" kind="relationship" relationship="rootViewController" id="TRg-d3-qw4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGY-QX-ucb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="1030"/>
+        </scene>
         <!--Sell-->
         <scene sceneID="4H1-Bs-7Sr">
             <objects>
@@ -288,10 +305,11 @@
                         <viewLayoutGuide key="safeArea" id="B71-Po-FPd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" id="9Yd-wT-TIg"/>
+                    <navigationItem key="navigationItem" title="Messages" id="jmv-FI-Oqt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snt-By-7nO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669.56521739130437" y="1116.2946428571429"/>
+            <point key="canvasLocation" x="617" y="1590"/>
         </scene>
         <!--Messages Table View Controller-->
         <scene sceneID="hWE-lj-erS">
@@ -309,6 +327,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Uvz-oC-6Dz" kind="show" identifier="MessageSegue" id="SM4-Eu-dT5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -319,9 +340,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPR-HW-tYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="1778"/>
+            <point key="canvasLocation" x="617" y="2211"/>
         </scene>
-        <!--Buy-->
+        <!--Message Table View Controller-->
+        <scene sceneID="J4T-yF-7Sq">
+            <objects>
+                <tableViewController id="Uvz-oC-6Dz" customClass="MessageTableViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dkw-fz-6u9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="771"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="KsX-U1-v2b">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KsX-U1-v2b" id="vtf-h4-1o1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uvz-oC-6Dz" id="RbR-oG-YMG"/>
+                            <outlet property="delegate" destination="Uvz-oC-6Dz" id="JMq-Xq-XuP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ot2-73-W63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="2211"/>
+        </scene>
+        <!--Sell-->
         <scene sceneID="kWL-cO-KqQ">
             <objects>
                 <viewController id="pGc-vv-yBj" customClass="BuyViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
@@ -330,7 +379,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-ou-XCz">
-                                <rect key="frame" x="0.0" y="132" width="414" height="715"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="GaU-QK-Huu" kind="embed" identifier="BuyCollectionSegue" id="7bL-Mu-dOH"/>
@@ -344,7 +393,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeU-Va-sWT">
-                                <rect key="frame" x="0.0" y="76" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -353,6 +402,7 @@
                         <viewLayoutGuide key="safeArea" id="7yB-6P-Bui"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Buy" id="fDO-JA-Ccc"/>
+                    <navigationItem key="navigationItem" title="Sell" id="vfk-hr-aS7"/>
                     <connections>
                         <outlet property="buyCollectionView" destination="tUo-ou-XCz" id="Qx3-3F-325"/>
                         <outlet property="searchBar" destination="DeU-Va-sWT" id="ZlR-Iq-PwL"/>
@@ -369,7 +419,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1524.6376811594205" y="96.428571428571431"/>
+            <point key="canvasLocation" x="2762.3188405797105" y="156.69642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iXi-WX-fLa">
@@ -381,9 +431,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="pGc-vv-yBj" kind="relationship" relationship="viewControllers" id="as9-hi-r0S"/>
+                        <segue destination="skt-fD-TpT" kind="relationship" relationship="viewControllers" id="rb1-8P-ZbF"/>
                         <segue destination="d1y-Fm-Vlh" kind="relationship" relationship="viewControllers" id="Sje-m2-kJx"/>
-                        <segue destination="ISb-KW-iux" kind="relationship" relationship="viewControllers" id="H1Q-EO-AD7"/>
+                        <segue destination="hst-yU-9Pb" kind="relationship" relationship="viewControllers" id="R65-1F-lfH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI3-Jw-COW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,7 +445,7 @@
             <objects>
                 <collectionViewController id="GaU-QK-Huu" customClass="BuyCollectionViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZHo-K2-osl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hvx-sC-Em2">
@@ -412,6 +462,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <connections>
+                                    <segue destination="BFW-H7-CL1" kind="show" identifier="ItemSegue" id="kpf-2K-gTl"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -422,7 +475,48 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbZ-S7-ZKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="97"/>
+            <point key="canvasLocation" x="3535" y="97"/>
+        </scene>
+        <!--Item View Controller-->
+        <scene sceneID="4xV-Ps-dDr">
+            <objects>
+                <viewController id="BFW-H7-CL1" customClass="ItemViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aJq-43-VCo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1h-cB-p2o">
+                                <rect key="frame" x="186" y="96" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wbC-W6-Vks"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xy-sd-Y2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4339" y="97"/>
+        </scene>
+        <!--Buy-->
+        <scene sceneID="Q7n-lL-FZk">
+            <objects>
+                <navigationController id="skt-fD-TpT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Buy" id="B4C-ke-GyA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvf-b5-rht">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pGc-vv-yBj" kind="relationship" relationship="rootViewController" id="n1Z-pE-sf6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y60-ug-098" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="157"/>
         </scene>
     </scenes>
     <resources>
