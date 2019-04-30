@@ -1,0 +1,6 @@
+framework module Pods_LocalMarketplaceTests {
+  umbrella header "Pods-LocalMarketplaceTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

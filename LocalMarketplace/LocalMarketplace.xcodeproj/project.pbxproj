@@ -27,6 +27,8 @@
 		8CF01A3D15DDBB221878A6E8 /* Pods_LocalMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D0E376724D4342AB2545E8 /* Pods_LocalMarketplace.framework */; };
 		B5340A7F2278E05600D07DB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */; };
 		B5340A862278E58E00D07DB8 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5340A852278E58E00D07DB8 /* ItemModel.swift */; };
+		B5D126D32278F06F00D435EF /* OwnedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D126D22278F06F00D435EF /* OwnedItemTableViewCell.swift */; };
+		B5E150612278EA6200622310 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E150602278EA6200622310 /* NewItemViewController.swift */; };
 		E5B7CBA51F86FC68D183E50C /* Pods_LocalMarketplaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AB55BB8EB7D45B28F7A6E4 /* Pods_LocalMarketplaceTests.framework */; };
 		F946C8B4E1DF8643E9B0CD62 /* Pods_LocalMarketplaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75532C0B2B4AE2FD34507768 /* Pods_LocalMarketplaceUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5340A852278E58E00D07DB8 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemModel.swift; path = "/Users/Ben/Desktop/UMD/SeniorYear/2019_spring/CMSC436/LocalMarketplace/Local-Marketplace/LocalMarketplace/LocalMarketplace/ItemModel.swift"; sourceTree = "<absolute>"; };
 		B5BA7240647F3C09EFCC94BE /* Pods-LocalMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-LocalMarketplace/Pods-LocalMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
+		B5D126D22278F06F00D435EF /* OwnedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedItemTableViewCell.swift; sourceTree = "<group>"; };
+		B5E150602278EA6200622310 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		E76BE528BD78BB51629B4F88 /* Pods-LocalMarketplaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplaceTests.debug.xcconfig"; path = "Target Support Files/Pods-LocalMarketplaceTests/Pods-LocalMarketplaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0E376724D4342AB2545E8 /* Pods_LocalMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF66B105D1488F0DD57AF2B /* Pods-LocalMarketplaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplaceTests.release.xcconfig"; path = "Target Support Files/Pods-LocalMarketplaceTests/Pods-LocalMarketplaceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		B5340A822278E35D00D07DB8 /* Sell-View */ = {
 			isa = PBXGroup;
 			children = (
+				B5D126D22278F06F00D435EF /* OwnedItemTableViewCell.swift */,
+				B5E150602278EA6200622310 /* NewItemViewController.swift */,
 				637B26BA226F579F001D42F6 /* SellViewController.swift */,
 			);
 			path = "Sell-View";
@@ -466,12 +472,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D126D32278F06F00D435EF /* OwnedItemTableViewCell.swift in Sources */,
 				637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */,
 				637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */,
 				B5340A862278E58E00D07DB8 /* ItemModel.swift in Sources */,
 				63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */,
 				639FA9D6226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld in Sources */,
 				639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */,
+				B5E150612278EA6200622310 /* NewItemViewController.swift in Sources */,
 				63D9372D2278D26B00D8D830 /* ItemViewController.swift in Sources */,
 				638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */,
 				639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */,
