@@ -38,7 +38,7 @@ class SellViewController: UITableViewController {
     
     func loadData() {
         let owned = root.child("items").queryOrdered(byChild: "owner").queryEqual(toValue: owner)
-        owned.observe(.value, with: { (snap) in
+        owned.observeSingleEvent(of: .value, with: { (snap) in
             var newItems: [Item] = []
             for itemSnap in snap.children {
                 let item = Item(snapshot: itemSnap as! DataSnapshot)
@@ -48,8 +48,6 @@ class SellViewController: UITableViewController {
             self.items = newItems
             self.tableView.reloadData()
         })
-        
-        owned.removeAllObservers()
     }
     
     // MARK: Actions

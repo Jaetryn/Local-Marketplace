@@ -253,73 +253,6 @@
             </objects>
             <point key="canvasLocation" x="129" y="1030"/>
         </scene>
-        <!--For Sale-->
-        <scene sceneID="4H1-Bs-7Sr">
-            <objects>
-                <viewController id="d1y-Fm-Vlh" customClass="SellViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BZx-eQ-Eji">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XsL-Ll-kqk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ownedItemCell" rowHeight="90" id="ime-lm-yro">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ime-lm-yro" id="wgl-Gd-YSN" customClass="OwnedtemTableViewCell" customModule="LocalMarketplace" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8q6-U7-jIX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-QJ-ROM">
-                                                    <rect key="frame" x="98" y="11" width="76" height="67"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcY-3E-d5d">
-                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sale Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssO-mG-rX3">
-                                                            <rect key="frame" x="0.0" y="46.5" width="76" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="sQC-qN-NBj"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="For Sale" id="AwG-wO-aII">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dfk-gK-rh1">
-                            <connections>
-                                <segue destination="Uvv-L2-usT" kind="presentation" id="d9O-QG-05b"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="OwnedItemsTable" destination="XsL-Ll-kqk" id="SJX-lB-oX5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qZ8-wZ-NEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2321.739130434783" y="794.86607142857144"/>
-        </scene>
         <!--Messages-->
         <scene sceneID="Rxc-vJ-1WQ">
             <objects>
@@ -412,7 +345,7 @@
             </objects>
             <point key="canvasLocation" x="1620" y="2211"/>
         </scene>
-        <!--Sell-->
+        <!--Buy-->
         <scene sceneID="kWL-cO-KqQ">
             <objects>
                 <viewController id="pGc-vv-yBj" customClass="BuyViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
@@ -444,7 +377,7 @@
                         <viewLayoutGuide key="safeArea" id="7yB-6P-Bui"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Buy" id="fDO-JA-Ccc"/>
-                    <navigationItem key="navigationItem" title="Sell" id="vfk-hr-aS7"/>
+                    <navigationItem key="navigationItem" title="Buy" id="vfk-hr-aS7"/>
                     <connections>
                         <outlet property="buyCollectionView" destination="tUo-ou-XCz" id="Qx3-3F-325"/>
                         <outlet property="searchBar" destination="DeU-Va-sWT" id="ZlR-Iq-PwL"/>
@@ -572,12 +505,79 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d1y-Fm-Vlh" kind="relationship" relationship="rootViewController" id="XHy-X5-zES"/>
+                        <segue destination="5J1-j9-kal" kind="relationship" relationship="rootViewController" id="t4S-mY-DwQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCq-S5-KcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1524.6376811594205" y="794.86607142857144"/>
+        </scene>
+        <!--For Sale-->
+        <scene sceneID="nog-tI-W3S">
+            <objects>
+                <tableViewController id="5J1-j9-kal" customClass="SellViewController" customModule="LocalMarketplace" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xDY-9e-Jmr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ownedItemCell" rowHeight="90" id="hH1-PB-tAR" customClass="OwnedItemTableViewCell" customModule="LocalMarketplace" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hH1-PB-tAR" id="0lK-eh-00X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="LPe-62-xYd">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="0oj-Nd-cv9">
+                                            <rect key="frame" x="98" y="11" width="45" height="67"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED2-Cz-txv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMH-gT-hMe">
+                                                    <rect key="frame" x="0.0" y="46.5" width="45" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemImage" destination="LPe-62-xYd" id="WWw-mA-ON4"/>
+                                    <outlet property="nameLabel" destination="ED2-Cz-txv" id="4QP-MX-47b"/>
+                                    <outlet property="priceLabel" destination="EMH-gT-hMe" id="N2S-gd-xgM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5J1-j9-kal" id="4XN-pZ-zgi"/>
+                            <outlet property="delegate" destination="5J1-j9-kal" id="aZU-O4-RR3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="For Sale" id="bTp-o4-NpC">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="WHa-Rm-FjK">
+                            <connections>
+                                <segue destination="Uvv-L2-usT" kind="presentation" id="96z-L9-OTy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="OwnedItemsTable" destination="xDY-9e-Jmr" id="XOY-4V-Vwm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdI-NL-ehW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2382.608695652174" y="794.86607142857144"/>
         </scene>
         <!--New Item-->
         <scene sceneID="3SQ-Tq-sop">
@@ -662,11 +662,18 @@
                         <viewLayoutGuide key="safeArea" id="682-qQ-Qez"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Item" id="pnB-2Y-fel">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qjS-NN-4tf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTa-XO-dfV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qjS-NN-4tf">
+                            <connections>
+                                <action selector="cancelAction:" destination="tZq-8i-Ftu" id="25r-em-GeW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tTa-XO-dfV">
+                            <connections>
+                                <segue destination="kwB-zn-bea" kind="unwind" unwindAction="returnToTable:" id="6iG-Jy-R2c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="CancelButton" destination="qjS-NN-4tf" id="9Sp-70-Tv4"/>
                         <outlet property="DescriptionInput" destination="eVn-5r-uNP" id="HfO-vy-wK9"/>
                         <outlet property="ItemImage" destination="i1O-dG-Yki" id="Apk-F8-tpd"/>
                         <outlet property="NameInput" destination="wIG-BN-6uw" id="LxJ-54-CvC"/>
@@ -676,6 +683,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIQ-kM-0ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kwB-zn-bea" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4195.652173913044" y="794.86607142857144"/>
         </scene>
@@ -699,6 +707,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="imageDefault" width="120" height="120"/>
         <image name="logo.png" width="350" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>

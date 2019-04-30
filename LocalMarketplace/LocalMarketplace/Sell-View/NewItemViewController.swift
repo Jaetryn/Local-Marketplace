@@ -76,9 +76,7 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         )
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:
-            { (action) in
-                self.dismiss(animated: true, completion: nil)
-        })
+            { (action) in })
         )
         
         present(actionSheet, animated: true)
