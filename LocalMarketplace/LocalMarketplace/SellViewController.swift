@@ -18,10 +18,9 @@ import UIKit
 import Firebase
 
 class SellViewController: UITableViewController {
-    // var currentUser: User
-    // user model needs to be implemented
     
     var items: [Item] = []
+    var selectedItem: Item?
     var root: DatabaseReference!
     let owner = "me"
     
@@ -84,6 +83,7 @@ class SellViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ownedItemCell", for: indexPath)
         
         if let itemCell = cell as? OwnedItemTableViewCell {
+            print("HIT")
             // Configure the cell...
             let item = items[indexPath.row]
             itemCell.nameLabel.text = item.name
@@ -99,16 +99,26 @@ class SellViewController: UITableViewController {
         return 90
     }
     
+
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedItem = items[indexPath.row]
+        performSegue(withIdentifier: "ItemSegue", sender: self)
+    }
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        if (segue.identifier == "ItemSegue"){
+            let destination = segue.destination as! ItemDetailViewController
+            print("Segue from item cell to item")
+            destination.item = selectedItem
+        }
+        
      }
-     */
+ 
 
 }
 

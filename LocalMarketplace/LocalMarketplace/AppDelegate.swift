@@ -9,16 +9,21 @@
 import UIKit
 import CoreData
 import Firebase
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let locationManager = CLLocationManager()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Location Services
+        locationManager.requestAlwaysAuthorization()
+
         // Configure Firebase app
         FirebaseApp.configure()
         
@@ -96,3 +101,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/*
+extension AppDelegate: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+        // create CLLocation from the coordinates of CLVisit
+        let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        
+        // Get location description
+    }
+    
+    func newVisitReceived(_ visit: CLVisit, description: String) {
+        let location = Location(visit: visit, descriptionString: description)
+        
+        // Save location to disk
+    }
+}
+ */

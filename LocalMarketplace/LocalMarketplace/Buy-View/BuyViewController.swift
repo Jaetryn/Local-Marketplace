@@ -17,8 +17,7 @@ Where the user can "infinitely" scroll through a list of listings. Selecting an 
 import UIKit
 
 class BuyViewController: UIViewController, UISearchBarDelegate {
-    // var currentUser: User
-    // user model needs to be implemented
+    var currentUser: User!
     
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -28,6 +27,8 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("current user is: " + currentUser.username)
         
         searchBar.delegate = self
         // Do any additional setup after loading the view.

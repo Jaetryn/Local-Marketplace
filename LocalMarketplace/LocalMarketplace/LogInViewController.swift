@@ -19,10 +19,11 @@
  */
 
 import UIKit
+import Firebase
 
 class LogInViewController: UIViewController {
-    // var currentUser: User
-    // user model needs to be implemented
+    var currentUser: User?
+    var root: DatabaseReference!
     
     @IBOutlet weak var logoImage: UIImageView!
     
@@ -33,15 +34,34 @@ class LogInViewController: UIViewController {
     
     @IBAction func logInButtonPress(_ sender: Any) {
         // Check if user + pass combo is correct.
+        if(usernameField.text != nil && passwordField.text != nil){
+            let found = root.child("users").queryOrdered(byChild: "username").queryEqual(toValue: usernameField.text!)
+            // username found, check password to corresponding username.
+            found.observeSingleEvent(of: .value, with: { (snap) in
+                for itemSnap in snap.children {
+                    let userDB = User(snapshot: itemSnap as! DataSnapshot)
+                    if(userDB.password == self.passwordField.text!){
+                        self.currentUser = userDB
+                        self.performSegue(withIdentifier: "LogInSegue", sender: nil)
+                    }else{
+                        // Tell user to check log in credentials.
+                    }
+                }
+            })
+
+            
+        }
         print("log in button pressed")
     }
     
     @IBAction func signUpButtonPress(_ sender: Any) {
-        print("sign up button pressed")
+        performSegue(withIdentifier: "SignUpSegue", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        root = Database.database().reference()
         // Do any additional setup after loading the view.
     }
     
@@ -79,19 +99,20 @@ class LogInViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let identity = segue.identifier
-        let dest = segue.destination
         
         if identity == "loggedIn" {
             print("loggedIn")
         }
         
-        if identity == "login" {
+        if identity == "LogInSegue" {
+            let tabBar = segue.destination as! UITabBarController
+            let nav = tabBar.viewControllers![0] as! UINavigationController
+            let dest = nav.topViewController as! BuyViewController
+            
+            dest.currentUser = self.currentUser
             print("login")
         }
         
-        if identity == "signup" {
-            print("signup")
-        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
@@ -99,16 +120,7 @@ class LogInViewController: UIViewController {
     // Conditional segue for login. Only segues to app if user/pass combo is correct.
     //To be updated when user model and database is setup. Right now, use "user" and "pass" as values.
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "login" {
-            if (usernameField.text == "user" && passwordField.text == "pass"){
-                print("correct user/pass, segue to app")
-                return true
-            }else{
-                print("incorrect user/pass, will not segue")
-                return false
-            }
-        }
-        return true
+        return false
     }
 
 }

@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
-private let reuseIdentifier = "collectionCell"
+private let reuseIdentifier = "ExistingItemCell"
 
 class BuyCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var searchItem: String = ""
+    var items: [Item] = []
+    var selectedItem: Item?
+    var root: DatabaseReference!
+    let owner = "me"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,23 +25,44 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-
-
+        
         // Do any additional setup after loading the view.
-
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib.init(nibName: "ExistingItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ExistingItemCollectionViewCell")
+        root = Database.database().reference()
+        loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+        
+    }
+    
+    @objc func loadList(){
+        loadData()
+        self.collectionView.reloadData()
+    }
+    
+    
+    func loadData() {
+        let owned = root.child("items").queryOrdered(byChild: "owner").queryEqual(toValue: owner)
+        owned.observeSingleEvent(of: .value, with: { (snap) in
+            var newItems: [Item] = []
+            for itemSnap in snap.children {
+                let item = Item(snapshot: itemSnap as! DataSnapshot)
+                newItems.append(item)
+            }
+            
+            self.items = newItems
+            self.collectionView.reloadData()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        self.collectionView.delegate = self;
         
         searchItem = containerViewController?.searchItem ?? searchItem
         print("searched for: " + searchItem)
     }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -48,8 +75,9 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
         }
         
         if (segue.identifier == "ItemSegue"){
-            let destination = segue.destination as! ItemViewController
+            let destination = segue.destination as! ItemDetailViewController
             print("Segue from item cell to item")
+            destination.item = selectedItem
         }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
@@ -66,24 +94,34 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 20
+        return items.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
+        
+        
         // Configure the cell
-        cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1.0
     
+        if let itemCell = cell as? ExistingItemCollectionViewCell {
+            // Configure the cell...
+            let item = items[indexPath.row]
+            itemCell.title?.text = item.name
+            //itemCell.priceLabel.text = item.price
+            //itemCell.image?.image = item.image
+            return itemCell
+        }
+        
         return cell
     }
 
     // MARK: UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = collectionView.bounds.width/3.0
+        let yourWidth = collectionView.bounds.width / 3.0
         let yourHeight = yourWidth
         
         return CGSize(width: yourWidth, height: yourHeight)
@@ -129,7 +167,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
     }
  
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItem = items[indexPath.item]
         performSegue(withIdentifier: "ItemSegue", sender: self)
-        print("hello")
     }
 }

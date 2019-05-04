@@ -9,11 +9,13 @@
 import UIKit
 import Photos
 import AVKit
+import CoreLocation
 
 class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var item: Item?
     var imagePickerController = UIImagePickerController()
+    //let locationManager = CLLocationManager()
     
     //MARK: - Outlets
     @IBOutlet weak var ItemImage: UIImageView!
@@ -31,8 +33,10 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = false
+        
     }
     
+
     
     // MARK: - Photos
     @IBAction func PhotoButton(_ sender: Any) {
@@ -105,8 +109,13 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let quality = QualityInput.text ?? "quality"
                 let description = DescriptionInput.text ?? "description"
                 let image = ItemImage.image ?? nil
+                //let location = locationManager.location
                 
                 item = Item(name: name, price: price, quality: quality, desc: description, img: image)
+                //item = Item(name: name, price: price, quality: quality, desc: description, img: image, location: location!)
+                
+                // Update buycollection view controller to include new item.
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
             }
         }
     }

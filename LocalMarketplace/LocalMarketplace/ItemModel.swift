@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import UIKit
+import CoreLocation
 
 // Messing around, could add this
 enum ItemQuality: String {
@@ -25,7 +26,7 @@ class Item {
     var quality: String
     var image: UIImage?
     var imagePath: String?
-    var location: String? // TEMPORARY, will add location support
+    var location: String // TEMPORARY, will add location support
     var owner: String
     var ref: DatabaseReference?
     
@@ -35,7 +36,7 @@ class Item {
         self.itemDescription = desc
         self.quality = quality
         image = img
-        location = "here"
+        self.location = "here"
         owner = "me"
     }
     

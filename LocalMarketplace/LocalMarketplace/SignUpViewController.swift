@@ -17,6 +17,7 @@
  */
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -33,9 +34,12 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var fieldStack: UIStackView!
     
+    var root: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        root = Database.database().reference()
         // Do any additional setup after loading the view.
         
         cancelButton.layer.borderWidth = 1
@@ -59,7 +63,25 @@ class SignUpViewController: UIViewController {
         
 }
     
-
+    @IBAction func signUpAction(_ sender: Any) {
+        if(usernameField.text != nil && passwordField.text != nil && emailField.text != nil){
+            let newUser = User(username: usernameField.text!, password: passwordField.text!, email: emailField.text!)
+            
+            // Add user to the database.
+            let dbItem = root.child("users").childByAutoId()
+            dbItem.child("username").setValue(newUser.username)
+            dbItem.child("password").setValue(newUser.password) // Should encrypt this.. but yeah.
+            dbItem.child("email").setValue(newUser.email)
+            dbItem.child("funds").setValue(newUser.funds)
+            
+            
+            performSegue(withIdentifier: "SignUpConfirmSegue", sender: nil)
+            // Done. Now go back to log in page.
+        }else{
+            // Tell user to make sure all fields are filled out.
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
