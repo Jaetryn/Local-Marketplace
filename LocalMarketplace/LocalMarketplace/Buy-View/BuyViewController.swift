@@ -57,6 +57,8 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
  
         if (segue.identifier == childSegueName){
             childViewController = segue.destination as? BuyCollectionViewController
+            
+            childViewController!.currentUser = currentUser
         }
         
         // Get the new view controller using segue.destination.

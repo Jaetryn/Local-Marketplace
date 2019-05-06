@@ -27,6 +27,7 @@
 		639FA9E6226E5C410062E2EA /* LocalMarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9E5226E5C410062E2EA /* LocalMarketplaceTests.swift */; };
 		639FA9F1226E5C410062E2EA /* LocalMarketplaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */; };
 		63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */; };
+		63FD90DF228010D900CFB29D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD90DE228010D900CFB29D /* UserViewController.swift */; };
 		8CF01A3D15DDBB221878A6E8 /* Pods_LocalMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D0E376724D4342AB2545E8 /* Pods_LocalMarketplace.framework */; };
 		B5340A7F2278E05600D07DB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */; };
 		B5340A862278E58E00D07DB8 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5340A852278E58E00D07DB8 /* ItemModel.swift */; };
@@ -81,6 +82,7 @@
 		639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMarketplaceUITests.swift; sourceTree = "<group>"; };
 		639FA9F2226E5C410062E2EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		63FD90DE228010D900CFB29D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75532C0B2B4AE2FD34507768 /* Pods_LocalMarketplaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalMarketplaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AB55BB8EB7D45B28F7A6E4 /* Pods_LocalMarketplaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalMarketplaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A61F8D874108EDF07B4CB0 /* Pods-LocalMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplace.release.xcconfig"; path = "Target Support Files/Pods-LocalMarketplace/Pods-LocalMarketplace.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		639FA9CC226E5C3F0062E2EA /* LocalMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				63FD90DD228010B800CFB29D /* User-View */,
 				639C23E92279F7E7005F2325 /* Item-View */,
 				634B6E032279092B00362929 /* logo.png */,
 				B5340A842278E3A400D07DB8 /* User-Auth */,
@@ -202,6 +205,14 @@
 				639FA9F2226E5C410062E2EA /* Info.plist */,
 			);
 			path = LocalMarketplaceUITests;
+			sourceTree = "<group>";
+		};
+		63FD90DD228010B800CFB29D /* User-View */ = {
+			isa = PBXGroup;
+			children = (
+				63FD90DE228010D900CFB29D /* UserViewController.swift */,
+			);
+			path = "User-View";
 			sourceTree = "<group>";
 		};
 		B5340A802278E31800D07DB8 /* Messages */ = {
@@ -492,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				634B6E09227910E100362929 /* ExistingItemCollectionViewCell.swift in Sources */,
+				63FD90DF228010D900CFB29D /* UserViewController.swift in Sources */,
 				B5D126D32278F06F00D435EF /* OwnedItemTableViewCell.swift in Sources */,
 				637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */,
 				637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */,

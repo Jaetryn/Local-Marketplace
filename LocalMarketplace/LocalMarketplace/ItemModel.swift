@@ -30,14 +30,14 @@ class Item {
     var owner: String
     var ref: DatabaseReference?
     
-    init(name: String, price: String, quality: String, desc: String, img: UIImage?) {
+    init(name: String, price: String, quality: String, desc: String, owner: String, img: UIImage?) {
         self.name = name
         self.price = price
         self.itemDescription = desc
         self.quality = quality
         image = img
         self.location = "here"
-        owner = "me"
+        self.owner = owner
     }
     
     init(snapshot: DataSnapshot) {

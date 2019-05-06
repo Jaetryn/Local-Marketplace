@@ -106,11 +106,24 @@ class LogInViewController: UIViewController {
         
         if identity == "LogInSegue" {
             let tabBar = segue.destination as! UITabBarController
+            
             let nav = tabBar.viewControllers![0] as! UINavigationController
             let dest = nav.topViewController as! BuyViewController
-            
             dest.currentUser = self.currentUser
-            print("login")
+            
+
+            let nav2 = tabBar.viewControllers![1] as! UINavigationController
+            let dest2 = nav2.topViewController as! SellViewController
+            dest2.currentUser = self.currentUser
+        
+            let nav3 = tabBar.viewControllers![2] as! UINavigationController
+            let dest3 = nav3.topViewController as! MessagesViewController
+            dest3.currentUser = self.currentUser
+            
+            let dest4 = tabBar.viewControllers![3] as! UserViewController
+
+            dest4.currentUser = self.currentUser
+            print("Successful log in.")
         }
         
         // Get the new view controller using segue.destination.

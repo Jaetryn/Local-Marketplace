@@ -14,6 +14,7 @@ import CoreLocation
 class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var item: Item?
+    var currentUser: User!
     var imagePickerController = UIImagePickerController()
     //let locationManager = CLLocationManager()
     
@@ -111,7 +112,7 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let image = ItemImage.image ?? nil
                 //let location = locationManager.location
                 
-                item = Item(name: name, price: price, quality: quality, desc: description, img: image)
+                item = Item(name: name, price: price, quality: quality, desc: description, owner: currentUser.username, img: image)
                 //item = Item(name: name, price: price, quality: quality, desc: description, img: image, location: location!)
                 
                 // Update buycollection view controller to include new item.

@@ -17,6 +17,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
     var selectedItem: Item?
     var root: DatabaseReference!
     let owner = "me"
+    var currentUser: User!
     
     
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
     
     
     func loadData() {
-        let owned = root.child("items").queryOrdered(byChild: "owner").queryEqual(toValue: owner)
+        let owned = root.child("items").queryOrdered(byChild: "owner")
         owned.observeSingleEvent(of: .value, with: { (snap) in
             var newItems: [Item] = []
             for itemSnap in snap.children {
@@ -78,6 +79,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
             let destination = segue.destination as! ItemDetailViewController
             print("Segue from item cell to item")
             destination.item = selectedItem
+            destination.currentUser = currentUser
         }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.

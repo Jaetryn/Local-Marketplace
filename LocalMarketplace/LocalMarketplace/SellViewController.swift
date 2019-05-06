@@ -23,12 +23,14 @@ class SellViewController: UITableViewController {
     var selectedItem: Item?
     var root: DatabaseReference!
     let owner = "me"
-    
+    var currentUser: User!
+
     @IBOutlet var OwnedItemsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("current user is: " + (currentUser.username))
         // Do any additional setup after loading the view.
         root = Database.database().reference()
         
@@ -36,7 +38,7 @@ class SellViewController: UITableViewController {
     }
     
     func loadData() {
-        let owned = root.child("items").queryOrdered(byChild: "owner").queryEqual(toValue: owner)
+        let owned = root.child("items").queryOrdered(byChild: "owner").queryEqual(toValue: currentUser.username)
         owned.observeSingleEvent(of: .value, with: { (snap) in
             var newItems: [Item] = []
             for itemSnap in snap.children {
@@ -58,7 +60,7 @@ class SellViewController: UITableViewController {
                 let dbItem = root.child("items").childByAutoId()
                 dbItem.child("name").setValue(item.name)
                 dbItem.child("price").setValue(item.price)
-                dbItem.child("owner").setValue(owner)
+                dbItem.child("owner").setValue(currentUser.username)
                 dbItem.child("quality").setValue(item.quality)
                 dbItem.child("description").setValue(item.itemDescription)
                 //dbItem.child("image").setValue(item.image)
@@ -115,6 +117,13 @@ class SellViewController: UITableViewController {
             let destination = segue.destination as! ItemDetailViewController
             print("Segue from item cell to item")
             destination.item = selectedItem
+            destination.currentUser = currentUser
+        }
+        
+        if (segue.identifier == "NewListingSegue"){
+            let nav = segue.destination as! UINavigationController
+            let dest = nav.topViewController as! NewItemViewController
+            dest.currentUser = currentUser
         }
         
      }
