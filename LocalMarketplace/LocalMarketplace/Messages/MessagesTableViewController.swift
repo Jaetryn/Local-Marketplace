@@ -7,104 +7,80 @@
 //
 
 import UIKit
+import Firebase
 
 class MessagesTableViewController: UITableViewController {
 
-    // var currentUser: User
-    // user model needs to be implemented
-    
-    // Data should be a 2d array of conversation objects. Conversation objects should contain an array of messages with an associated value for each message depicting who the "sender" is. And (optional) time when the message was sent. I need at least the sender information so I can format the message view accordingly.
-    
-    var data = [["Message 1", "hey", "sup lol", "bro how much for that supreme shirt"],["Message 2"],["Message 3"]] // Placeholder.
-    
-    // Populate this 2D array with an array of conversations -> the conversation. (Based on user variable)
+    var users: [User] = []
+    var root: DatabaseReference!
+    var currentUser: User!
+    var receiver: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        root = Database.database().reference()
+        fetchUsers()
+    }
+    
+    // Fetch users that are not the current user from database and update when new user registers
+    func fetchUsers() {
+        root.child("users").observeSingleEvent(of: .value, with: { snapshot in
+            for userSnap in snapshot.children {
+                let user = User(snapshot: userSnap as! DataSnapshot)
+                if user.username != self.currentUser.username {
+                    self.users.append(user)
+                }
+            }
+            
+            self.tableView.reloadData()
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        let currentCell = tableView.cellForRow(at: indexPath!) as UITableViewCell?
+        
+        receiver = currentCell?.textLabel!.text
+        
+        performSegue(withIdentifier: "NewMessageSegue", sender: self)
     }
 
     // MARK: - Table view data source
 
+    // Number of Sections
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    // Number of Rows in Section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return users.count
     }
 
-    
+    // Fill table with other users from database
+    // To-do: Fill table only with users that have chat history with current user
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
 
-        // Configure the cell...
-
-        cell.textLabel?.text = data[indexPath.item][0]
-
+        let user = users[indexPath.row]
+        cell.textLabel?.text = user.username
         
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identity = segue.identifier
-        let dest = segue.destination as! MessageTableViewController
+        let destination = segue.destination as! MessageLogController
         
-        if identity == "MessageSegue" {
-            dest.conversation = data[0]
+        if segue.identifier == "NewMessageSegue" {
+            destination.currentUser = currentUser
+            destination.receiver = receiver
         }
-
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
- 
-
 }

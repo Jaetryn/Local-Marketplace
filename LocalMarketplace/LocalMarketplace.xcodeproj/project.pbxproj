@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6330D80A227D4B67001C8375 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6330D809227D4B67001C8375 /* userModel.swift */; };
+		6228C5732280B8C0002F3A20 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6228C5722280B8C0002F3A20 /* LogInViewController.swift */; };
+		6228C5752280B8C8002F3A20 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6228C5742280B8C8002F3A20 /* SignUpViewController.swift */; };
+		6228C5772281019E002F3A20 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6228C5762281019E002F3A20 /* MessageModel.swift */; };
+		628703202280B422009D612D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6287031F2280B422009D612D /* GoogleService-Info.plist */; };
+		62BDE8A62281D07C00931CAE /* MessageLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BDE8A52281D07C00931CAE /* MessageLogController.swift */; };
+		62BDE8A822823E4E00931CAE /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BDE8A722823E4E00931CAE /* MessageCell.swift */; };
+		6330D80A227D4B67001C8375 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6330D809227D4B67001C8375 /* UserModel.swift */; };
 		6340C0AC227261920035F3FA /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340C0AB227261920035F3FA /* MessagesTableViewController.swift */; };
-		634B6E042279092B00362929 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 634B6E032279092B00362929 /* logo.png */; };
 		634B6E09227910E100362929 /* ExistingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6E07227910E100362929 /* ExistingItemCollectionViewCell.swift */; };
-		637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B4226F4D7E001D42F6 /* LogInViewController.swift */; };
-		637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B6226F52D0001D42F6 /* SignUpViewController.swift */; };
 		637B26B9226F5791001D42F6 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26B8226F5791001D42F6 /* BuyViewController.swift */; };
 		637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26BA226F579F001D42F6 /* SellViewController.swift */; };
 		637B26BD226F57AE001D42F6 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B26BC226F57AE001D42F6 /* MessagesViewController.swift */; };
 		638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CB27722710C77005CB451 /* BuyCollectionViewController.swift */; };
 		639C23EB2279F843005F2325 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C23EA2279F843005F2325 /* ItemDetailViewController.swift */; };
 		639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */; };
-		639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9CF226E5C3F0062E2EA /* ViewController.swift */; };
 		639FA9D3226E5C3F0062E2EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FA9D1226E5C3F0062E2EA /* Main.storyboard */; };
 		639FA9D6226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9D4226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld */; };
 		639FA9D8226E5C410062E2EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639FA9D7226E5C410062E2EA /* Assets.xcassets */; };
 		639FA9DB226E5C410062E2EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FA9D9226E5C410062E2EA /* LaunchScreen.storyboard */; };
 		639FA9E6226E5C410062E2EA /* LocalMarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9E5226E5C410062E2EA /* LocalMarketplaceTests.swift */; };
 		639FA9F1226E5C410062E2EA /* LocalMarketplaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */; };
-		63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */; };
 		63FD90DF228010D900CFB29D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FD90DE228010D900CFB29D /* UserViewController.swift */; };
 		8CF01A3D15DDBB221878A6E8 /* Pods_LocalMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D0E376724D4342AB2545E8 /* Pods_LocalMarketplace.framework */; };
-		B5340A7F2278E05600D07DB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */; };
 		B5340A862278E58E00D07DB8 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5340A852278E58E00D07DB8 /* ItemModel.swift */; };
 		B5D126D32278F06F00D435EF /* OwnedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D126D22278F06F00D435EF /* OwnedItemTableViewCell.swift */; };
 		B5E150612278EA6200622310 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E150602278EA6200622310 /* NewItemViewController.swift */; };
@@ -56,12 +56,15 @@
 
 /* Begin PBXFileReference section */
 		1A1E8C592F035D466B9A8053 /* Pods-LocalMarketplaceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplaceUITests.release.xcconfig"; path = "Target Support Files/Pods-LocalMarketplaceUITests/Pods-LocalMarketplaceUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6330D809227D4B67001C8375 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
+		6228C5722280B8C0002F3A20 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = LocalMarketplace/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
+		6228C5742280B8C8002F3A20 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = LocalMarketplace/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
+		6228C5762281019E002F3A20 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		6287031F2280B422009D612D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		62BDE8A52281D07C00931CAE /* MessageLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLogController.swift; sourceTree = "<group>"; };
+		62BDE8A722823E4E00931CAE /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		6330D809227D4B67001C8375 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6340C0AB227261920035F3FA /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
-		634B6E032279092B00362929 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../Downloads/logo.png; sourceTree = "<group>"; };
 		634B6E07227910E100362929 /* ExistingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		637B26B4226F4D7E001D42F6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ../LogInViewController.swift; sourceTree = "<group>"; };
-		637B26B6226F52D0001D42F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		637B26B8226F5791001D42F6 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		637B26BA226F579F001D42F6 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SellViewController.swift; path = ../SellViewController.swift; sourceTree = "<group>"; };
 		637B26BC226F57AE001D42F6 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		639C23EA2279F843005F2325 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		639FA9CA226E5C3F0062E2EA /* LocalMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		639FA9CF226E5C3F0062E2EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		639FA9D2226E5C3F0062E2EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		639FA9D5226E5C3F0062E2EA /* LocalMarketplace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalMarketplace.xcdatamodel; sourceTree = "<group>"; };
 		639FA9D7226E5C410062E2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,14 +83,12 @@
 		639FA9EC226E5C410062E2EA /* LocalMarketplaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalMarketplaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		639FA9F0226E5C410062E2EA /* LocalMarketplaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMarketplaceUITests.swift; sourceTree = "<group>"; };
 		639FA9F2226E5C410062E2EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		63FD90DE228010D900CFB29D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75532C0B2B4AE2FD34507768 /* Pods_LocalMarketplaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalMarketplaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AB55BB8EB7D45B28F7A6E4 /* Pods_LocalMarketplaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalMarketplaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A61F8D874108EDF07B4CB0 /* Pods-LocalMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplace.release.xcconfig"; path = "Target Support Files/Pods-LocalMarketplace/Pods-LocalMarketplace.release.xcconfig"; sourceTree = "<group>"; };
 		A4C0E77FF7ADCF6028F855DD /* Pods-LocalMarketplaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-LocalMarketplaceUITests/Pods-LocalMarketplaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "/Users/user150985/Desktop/LMA/Local-Marketplace/LocalMarketplace/LocalMarketplace/GoogleService-Info.plist"; sourceTree = "<absolute>"; };
-		B5340A852278E58E00D07DB8 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemModel.swift; path = "/Users/user150985/Desktop/LMA/Local-Marketplace/LocalMarketplace/LocalMarketplace/ItemModel.swift"; sourceTree = "<absolute>"; };
+		B5340A852278E58E00D07DB8 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		B5BA7240647F3C09EFCC94BE /* Pods-LocalMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-LocalMarketplace/Pods-LocalMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		B5D126D22278F06F00D435EF /* OwnedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedItemTableViewCell.swift; sourceTree = "<group>"; };
 		B5E150602278EA6200622310 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +135,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6228C5712280B883002F3A20 /* User-Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6228C5722280B8C0002F3A20 /* LogInViewController.swift */,
+				6228C5742280B8C8002F3A20 /* SignUpViewController.swift */,
+			);
+			path = "User-Auth";
+			sourceTree = "<group>";
+		};
 		639C23E92279F7E7005F2325 /* Item-View */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,22 +177,21 @@
 		639FA9CC226E5C3F0062E2EA /* LocalMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				6228C5712280B883002F3A20 /* User-Auth */,
 				63FD90DD228010B800CFB29D /* User-View */,
 				639C23E92279F7E7005F2325 /* Item-View */,
-				634B6E032279092B00362929 /* logo.png */,
-				B5340A842278E3A400D07DB8 /* User-Auth */,
 				B5340A822278E35D00D07DB8 /* Sell-View */,
 				B5340A812278E33600D07DB8 /* Buy-View */,
 				B5340A802278E31800D07DB8 /* Messages */,
 				639FA9CD226E5C3F0062E2EA /* AppDelegate.swift */,
-				639FA9CF226E5C3F0062E2EA /* ViewController.swift */,
 				639FA9D1226E5C3F0062E2EA /* Main.storyboard */,
 				B5340A852278E58E00D07DB8 /* ItemModel.swift */,
-				6330D809227D4B67001C8375 /* userModel.swift */,
+				6228C5762281019E002F3A20 /* MessageModel.swift */,
+				6330D809227D4B67001C8375 /* UserModel.swift */,
 				639FA9D7226E5C410062E2EA /* Assets.xcassets */,
 				639FA9D9226E5C410062E2EA /* LaunchScreen.storyboard */,
 				639FA9DC226E5C410062E2EA /* Info.plist */,
-				B5340A7E2278E05600D07DB8 /* GoogleService-Info.plist */,
+				6287031F2280B422009D612D /* GoogleService-Info.plist */,
 				639FA9D4226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld */,
 			);
 			path = LocalMarketplace;
@@ -220,7 +228,8 @@
 			children = (
 				637B26BC226F57AE001D42F6 /* MessagesViewController.swift */,
 				6340C0AB227261920035F3FA /* MessagesTableViewController.swift */,
-				63D9372A2278CC5F00D8D830 /* MessageTableViewController.swift */,
+				62BDE8A52281D07C00931CAE /* MessageLogController.swift */,
+				62BDE8A722823E4E00931CAE /* MessageCell.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -244,16 +253,6 @@
 			);
 			path = "Sell-View";
 			sourceTree = "<group>";
-		};
-		B5340A842278E3A400D07DB8 /* User-Auth */ = {
-			isa = PBXGroup;
-			children = (
-				637B26B4226F4D7E001D42F6 /* LogInViewController.swift */,
-				637B26B6226F52D0001D42F6 /* SignUpViewController.swift */,
-			);
-			name = "User-Auth";
-			path = "/Users/user150985/Desktop/LMA/Local-Marketplace/LocalMarketplace/LocalMarketplace/User-Auth";
-			sourceTree = "<absolute>";
 		};
 		E873D8F4B000ECF607B45AE2 /* Pods */ = {
 			isa = PBXGroup;
@@ -377,10 +376,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				639FA9DB226E5C410062E2EA /* LaunchScreen.storyboard in Resources */,
-				634B6E042279092B00362929 /* logo.png in Resources */,
-				B5340A7F2278E05600D07DB8 /* GoogleService-Info.plist in Resources */,
 				639FA9D8226E5C410062E2EA /* Assets.xcassets in Resources */,
 				639FA9D3226E5C3F0062E2EA /* Main.storyboard in Resources */,
+				628703202280B422009D612D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,16 +504,17 @@
 				63FD90DF228010D900CFB29D /* UserViewController.swift in Sources */,
 				B5D126D32278F06F00D435EF /* OwnedItemTableViewCell.swift in Sources */,
 				637B26BB226F579F001D42F6 /* SellViewController.swift in Sources */,
-				637B26B5226F4D7E001D42F6 /* LogInViewController.swift in Sources */,
+				6228C5732280B8C0002F3A20 /* LogInViewController.swift in Sources */,
 				B5340A862278E58E00D07DB8 /* ItemModel.swift in Sources */,
-				63D9372B2278CC5F00D8D830 /* MessageTableViewController.swift in Sources */,
+				6228C5752280B8C8002F3A20 /* SignUpViewController.swift in Sources */,
 				639FA9D6226E5C3F0062E2EA /* LocalMarketplace.xcdatamodeld in Sources */,
-				6330D80A227D4B67001C8375 /* userModel.swift in Sources */,
-				639FA9D0226E5C3F0062E2EA /* ViewController.swift in Sources */,
+				6330D80A227D4B67001C8375 /* UserModel.swift in Sources */,
+				62BDE8A62281D07C00931CAE /* MessageLogController.swift in Sources */,
+				62BDE8A822823E4E00931CAE /* MessageCell.swift in Sources */,
 				B5E150612278EA6200622310 /* NewItemViewController.swift in Sources */,
+				6228C5772281019E002F3A20 /* MessageModel.swift in Sources */,
 				638CB27822710C77005CB451 /* BuyCollectionViewController.swift in Sources */,
 				639FA9CE226E5C3F0062E2EA /* AppDelegate.swift in Sources */,
-				637B26B7226F52D0001D42F6 /* SignUpViewController.swift in Sources */,
 				637B26BD226F57AE001D42F6 /* MessagesViewController.swift in Sources */,
 				639C23EB2279F843005F2325 /* ItemDetailViewController.swift in Sources */,
 				637B26B9226F5791001D42F6 /* BuyViewController.swift in Sources */,
@@ -696,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVTSW2WF9K;
+				DEVELOPMENT_TEAM = 85MY5NRCVT;
 				INFOPLIST_FILE = LocalMarketplace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -715,7 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVTSW2WF9K;
+				DEVELOPMENT_TEAM = 85MY5NRCVT;
 				INFOPLIST_FILE = LocalMarketplace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
