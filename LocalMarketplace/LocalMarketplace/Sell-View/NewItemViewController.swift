@@ -11,12 +11,12 @@ import Photos
 import AVKit
 import CoreLocation
 
-class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     var item: Item?
     var currentUser: User!
     var imagePickerController = UIImagePickerController()
-    //let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     //MARK: - Outlets
     @IBOutlet weak var ItemImage: UIImageView!
@@ -31,13 +31,24 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = false
         
     }
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+    }
     
     // MARK: - Photos
     @IBAction func PhotoButton(_ sender: Any) {
@@ -110,10 +121,10 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let quality = QualityInput.text ?? "quality"
                 let description = DescriptionInput.text ?? "description"
                 let image = ItemImage.image ?? nil
-                //let location = locationManager.location
+                let locationLong = locationManager.location?.coordinate.longitude
+                let locationLat = locationManager.location?.coordinate.latitude
                 
-                item = Item(name: name, price: price, quality: quality, desc: description, owner: currentUser.username, img: image)
-                //item = Item(name: name, price: price, quality: quality, desc: description, img: image, location: location!)
+                item = Item(name: name, price: price, quality: quality, desc: description, owner: currentUser.username, img: image, lat: locationLat!, long: locationLong!)
                 
                 // Update buycollection view controller to include new item.
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)

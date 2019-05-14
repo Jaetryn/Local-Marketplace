@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, CLLocationManagerDelegate {
     
-    var item: Item?
-    var currentUser: User?
+    var item: Item!
+    var currentUser: User!
+    let locationManager = CLLocationManager()
 
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
@@ -32,12 +34,19 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
         
-        // Do any additional setup after loading the view.
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         stylize()
+        print("item coords. longitude: " + String(item.locationLong) + " latitude: " + String(item.locationLat))
     }
     
     func stylize(){
@@ -83,7 +92,29 @@ class ItemDetailViewController: UIViewController {
             purchaseButton.removeFromSuperview()
             itemLocation.removeFromSuperview()
             itemOwner.removeFromSuperview()
+        }else{
+            let distance = getDistance()
+            var distanceString = String(distance / 1609.34)
+            distanceString = truncate(distance: distanceString)
+            itemLocation.text = distanceString + " miles away"
         }
+    }
+    
+    func truncate(distance: String) -> String {
+        let index = distance.firstIndex(of: ".")!
+        let nextIndex = distance.index(index, offsetBy: 3)
+        let newString = distance[..<nextIndex]
+        return String(newString)
+    }
+    
+    func getDistance() -> CLLocationDistance {
+        let currentlyAt = locationManager.location?.coordinate
+        let from = CLLocation(latitude: currentlyAt!.latitude, longitude: currentlyAt!.longitude)
+        let to = CLLocation(latitude: item.locationLat, longitude: item.locationLong)
+        let distance = from.distance(from: to)
+        
+        return distance
+        
     }
     
     /*

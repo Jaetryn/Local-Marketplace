@@ -26,17 +26,19 @@ class Item {
     var quality: String
     var image: UIImage?
     var imagePath: String?
-    var location: String // TEMPORARY, will add location support
+    var locationLat: Double
+    var locationLong: Double
     var owner: String
     var ref: DatabaseReference?
     
-    init(name: String, price: String, quality: String, desc: String, owner: String, img: UIImage?) {
+    init(name: String, price: String, quality: String, desc: String, owner: String, img: UIImage?, lat: Double, long: Double) {
         self.name = name
         self.price = price
         self.itemDescription = desc
         self.quality = quality
         image = img
-        self.location = "here"
+        self.locationLat = lat
+        self.locationLong = long
         self.owner = owner
     }
     
@@ -57,11 +59,12 @@ class Item {
         if let quality = data["quality"] as? String {
             self.quality = quality
         } else { self.quality = "" }
-        //        if let image = data["image"] as? UIImage {
-        //            self.image = image
-        //        } else { image = nil }
-        
-        location = "here"
+        if let lat = data["latitude"] as? Double {
+            self.locationLat = lat
+        } else { self.locationLat = 0 }
+        if let long = data["longitude"] as? Double {
+            self.locationLong = long
+        } else { self.locationLong = 0 }
         
         ref = snapshot.ref
     }

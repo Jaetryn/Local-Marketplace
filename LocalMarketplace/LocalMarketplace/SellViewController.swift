@@ -63,7 +63,8 @@ class SellViewController: UITableViewController {
                 dbItem.child("owner").setValue(currentUser.username)
                 dbItem.child("quality").setValue(item.quality)
                 dbItem.child("description").setValue(item.itemDescription)
-                //dbItem.child("image").setValue(item.image)
+                dbItem.child("longitude").setValue( item.locationLong)
+                dbItem.child("latitude").setValue(item.locationLat)
                 
                 OwnedItemsTable.insertRows(at: [newIndexPath], with: .automatic)
             }
