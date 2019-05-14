@@ -49,7 +49,13 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
             var newItems: [Item] = []
             for itemSnap in snap.children {
                 let item = Item(snapshot: itemSnap as! DataSnapshot)
-                newItems.append(item)
+                if(self.searchItem != ""){
+                    if(item.name.contains(self.searchItem)){
+                        newItems.append(item)
+                    }
+                }else{
+                    newItems.append(item)
+                }
             }
             
             self.items = newItems
@@ -62,6 +68,7 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
         
         searchItem = containerViewController?.searchItem ?? searchItem
         print("searched for: " + searchItem)
+        loadData()
     }
 
     // MARK: - Navigation

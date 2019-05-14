@@ -19,7 +19,6 @@ import UIKit
 class BuyViewController: UIViewController, UISearchBarDelegate {
     var currentUser: User!
     
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var buyCollectionView: UIView!
     
@@ -42,8 +41,10 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
         // include items that have matching titles/descriptions that include the searched word.
         
         // TODO: Refresh BuyCollection view.
-        childViewController?.searchItem = searchItem
         self.searchBar.endEditing(true)
+        childViewController?.searchItem = self.searchItem
+        childViewController?.loadData()
+        childViewController?.view.setNeedsDisplay()
     }
     
     // MARK: - Navigation
@@ -59,6 +60,7 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
             childViewController = segue.destination as? BuyCollectionViewController
             
             childViewController!.currentUser = currentUser
+            childViewController!.searchItem = searchItem
         }
         
         // Get the new view controller using segue.destination.
