@@ -11,7 +11,7 @@ import Photos
 import AVKit
 import CoreLocation
 
- class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
     var item: Item?
     var currentUser: User!
@@ -23,7 +23,7 @@ import CoreLocation
     @IBOutlet weak var NameInput: UITextField!
     @IBOutlet weak var PriceInput: UITextField!
     @IBOutlet weak var QualityInput: UITextField!
-    @IBOutlet weak var DescriptionInput: UITextView!
+    @IBOutlet weak var DescriptionInput: UITextField!
     
     @IBOutlet weak var SaveButton: UIBarButtonItem!
     @IBOutlet weak var CancelButton: UIBarButtonItem!
