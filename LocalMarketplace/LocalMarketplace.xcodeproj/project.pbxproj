@@ -19,6 +19,7 @@
 		62BE5705228B94E1000D9251 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE5702228B94E1000D9251 /* FilterTableViewController.swift */; };
 		62BE5706228B94E1000D9251 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE5703228B94E1000D9251 /* FilterViewController.swift */; };
 		62BE5707228B94E1000D9251 /* SortTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE5704228B94E1000D9251 /* SortTableViewController.swift */; };
+		62BE5709228B98ED000D9251 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 62BE5708228B98EC000D9251 /* logo.png */; };
 		6330D80A227D4B67001C8375 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6330D809227D4B67001C8375 /* UserModel.swift */; };
 		6340C0AC227261920035F3FA /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340C0AB227261920035F3FA /* MessagesTableViewController.swift */; };
 		634B6E09227910E100362929 /* ExistingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B6E07227910E100362929 /* ExistingItemCollectionViewCell.swift */; };
@@ -74,6 +75,7 @@
 		62BE5702228B94E1000D9251 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterTableViewController.swift; path = "LocalMarketplace/SortFilter-View/FilterTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		62BE5703228B94E1000D9251 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = "LocalMarketplace/SortFilter-View/FilterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		62BE5704228B94E1000D9251 /* SortTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortTableViewController.swift; path = "LocalMarketplace/SortFilter-View/SortTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		62BE5708228B98EC000D9251 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		6330D809227D4B67001C8375 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6340C0AB227261920035F3FA /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		634B6E07227910E100362929 /* ExistingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		639FA9CC226E5C3F0062E2EA /* LocalMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				62BE5708228B98EC000D9251 /* logo.png */,
 				62BE5701228B94BC000D9251 /* SortFilter-View */,
 				6228C5712280B883002F3A20 /* User-Auth */,
 				63FD90DD228010B800CFB29D /* User-View */,
@@ -402,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639FA9DB226E5C410062E2EA /* LaunchScreen.storyboard in Resources */,
+				62BE5709228B98ED000D9251 /* logo.png in Resources */,
 				639FA9D8226E5C410062E2EA /* Assets.xcassets in Resources */,
 				639FA9D3226E5C3F0062E2EA /* Main.storyboard in Resources */,
 				628703202280B422009D612D /* GoogleService-Info.plist in Resources */,
