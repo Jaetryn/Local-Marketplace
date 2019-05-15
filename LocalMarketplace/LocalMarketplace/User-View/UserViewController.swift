@@ -19,9 +19,10 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         style()
-        // Do any additional setup after loading the view.
     }
     
     func style() {

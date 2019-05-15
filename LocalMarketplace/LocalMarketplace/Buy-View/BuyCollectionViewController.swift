@@ -8,40 +8,49 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 private let reuseIdentifier = "ExistingItemCell"
 
-class BuyCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+ class BuyCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     var searchItem: String = ""
+    var sortRequest: String = ""
+    var filterRequest = ""
+    var filterRequestMin = 0
+    var filterRequestMax = 1000000
     var items: [Item] = []
     var selectedItem: Item?
     var root: DatabaseReference!
     let owner = "me"
     var currentUser: User!
     
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib.init(nibName: "ExistingItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ExistingItemCollectionViewCell")
+        collectionView.register(UINib.init(nibName: "ExistingItemCollectionView", bundle: nil), forCellWithReuseIdentifier: "ExistingItemCollectionViewCell")
         root = Database.database().reference()
         loadData()
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-        
     }
     
     @objc func loadList(){
         loadData()
         self.collectionView.reloadData()
     }
-    
     
     func loadData() {
         let owned = root.child("items").queryOrdered(byChild: "owner")
@@ -59,8 +68,123 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
             }
             
             self.items = newItems
+            if(self.sortRequest == "Price (Ascending)"){
+                var sorted = self.sortPriceAscending(list: self.items)
+                self.items = sorted
+            }else if(self.sortRequest == "Price (Descending)"){
+                var sorted = self.sortPriceDescending(list: self.items)
+                self.items = sorted
+            }else if(self.sortRequest == "Distance (Ascending)"){
+                var sorted = self.sortDistanceAscending(list: self.items)
+                self.items = sorted
+            }else if(self.sortRequest == "Distance (Descending)"){
+                var sorted = self.sortDistanceDescending(list: self.items)
+                self.items = sorted
+            }
+            
+            if(self.filterRequest == "Price"){
+                var filtered = self.filterPrice(list: self.items)
+                self.items = filtered
+            }else if(self.filterRequest == "Distance"){
+                var filtered = self.filterDistance(list: self.items)
+                self.items = filtered
+            }
             self.collectionView.reloadData()
         })
+    }
+    
+    func filterPrice(list: [Item]) -> [Item]{
+        var filtered = list.filter { (item) -> Bool in
+            var price = 0
+            if(item.price != ""){
+                price = Int(item.price)!
+            }
+            
+            if(price >= self.filterRequestMin && price <= self.filterRequestMax){
+                return true
+            }
+            return false
+        }
+        
+        return filtered
+    }
+    
+    func filterDistance(list: [Item]) -> [Item]{
+        var filtered = list.filter { (item1) -> Bool in
+            var itemDistance = getDistance(item: item1)
+            if(itemDistance >= Double(self.filterRequestMin) && itemDistance <= Double(self.filterRequestMax)){
+                return true
+            }
+            return false
+        }
+        return filtered
+    }
+    
+    func sortPriceAscending(list: [Item]) -> [Item]{
+        var sorted = list
+        sorted.sort { (item1, item2) -> Bool in
+            var item1Price = 0
+            var item2Price = 0
+            if(item1.price != ""){
+                item1Price = Int(item1.price)!
+            }
+            if(item2.price != ""){
+                item2Price = Int(item2.price)!
+            }
+            return item1Price < item2Price
+            
+        }
+        return sorted
+    }
+    
+    func sortPriceDescending(list: [Item]) -> [Item]{
+        var sorted = list
+        sorted.sort { (item1, item2) -> Bool in
+            var item1Price = 0
+            var item2Price = 0
+            if(item1.price != ""){
+                item1Price = Int(item1.price)!
+            }
+            if(item2.price != ""){
+                item2Price = Int(item2.price)!
+            }
+            return item1Price > item2Price
+            
+        }
+        return sorted
+    }
+    
+    func sortDistanceAscending(list: [Item]) -> [Item]{
+        var sorted = list
+        sorted.sort { (item1, item2) -> Bool in
+            var item1Distance = getDistance(item: item1)
+            var item2Distance = getDistance(item: item2)
+            
+            return item1Distance < item2Distance
+            
+        }
+        return sorted
+    }
+    
+    func sortDistanceDescending(list: [Item]) -> [Item]{
+        var sorted = list
+        sorted.sort { (item1, item2) -> Bool in
+            var item1Distance = getDistance(item: item1)
+            var item2Distance = getDistance(item: item2)
+            
+            return item1Distance > item2Distance
+            
+        }
+        return sorted
+    }
+    
+    func getDistance(item: Item) -> CLLocationDistance {
+        let currentlyAt = locationManager.location?.coordinate
+        let from = CLLocation(latitude: currentlyAt!.latitude, longitude: currentlyAt!.longitude)
+        let to = CLLocation(latitude: item.locationLat, longitude: item.locationLong)
+        let distance = from.distance(from: to)
+        
+        return distance
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +192,10 @@ class BuyCollectionViewController: UICollectionViewController, UICollectionViewD
         
         searchItem = containerViewController?.searchItem ?? searchItem
         print("searched for: " + searchItem)
+        print("sort request: " + sortRequest)
+        print("filter request: " + filterRequest)
+        print("min" + String(filterRequestMin))
+        print("max" + String(filterRequestMax))
         loadData()
     }
 

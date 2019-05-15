@@ -53,7 +53,11 @@ class ItemDetailViewController: UIViewController, CLLocationManagerDelegate {
         // Add content.
         //itemImage.image = ...
         itemName.text = item?.name
-        itemPrice.text = "$" + item!.price
+        if(item!.price == ""){
+            itemPrice.text = "$0"
+        }else{
+            itemPrice.text = "$" + item!.price
+        }
         itemQuality.text = item?.quality
         itemDescription.text = item?.itemDescription
         itemOwner.text = "Sold by: " + item!.owner
@@ -102,7 +106,7 @@ class ItemDetailViewController: UIViewController, CLLocationManagerDelegate {
     
     func truncate(distance: String) -> String {
         let index = distance.firstIndex(of: ".")!
-        let nextIndex = distance.index(index, offsetBy: 3)
+        let nextIndex = distance.index(index, offsetBy: 2)
         let newString = distance[..<nextIndex]
         return String(newString)
     }
@@ -114,7 +118,6 @@ class ItemDetailViewController: UIViewController, CLLocationManagerDelegate {
         let distance = from.distance(from: to)
         
         return distance
-        
     }
     
     /*
@@ -132,9 +135,24 @@ class ItemDetailViewController: UIViewController, CLLocationManagerDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "PurchaseSegue"){
+            let destination = segue.destination as! PurchaseViewController
+            destination.currentUser = self.currentUser
+            destination.soldItem = self.item
+        }
     }
- 
-
+    
+    @IBAction func purchase(_ sender: Any) {
+        var price = 0
+        
+        if(self.item.price != ""){
+            price = Int(self.item.price)!
+        }
+        
+        self.currentUser.funds = self.currentUser.funds - Double(price)
+        
+        self.item.ref?.removeValue()
+        
+        performSegue(withIdentifier: "PurchaseSegue", sender: self)
+    }
 }

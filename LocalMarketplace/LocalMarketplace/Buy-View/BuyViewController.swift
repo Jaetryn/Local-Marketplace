@@ -21,8 +21,13 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var buyCollectionView: UIView!
+    @IBOutlet weak var filterSortView: UIView!
     
     var searchItem = ""
+    var sortRequest = ""
+    var filterRequest = ""
+    var filterRequestMin = 0
+    var filterRequestMax = 1000000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,7 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
         print("current user is: " + currentUser.username)
         
         searchBar.delegate = self
+        searchBar.barStyle = UIBarStyle.blackTranslucent
         // Do any additional setup after loading the view.
     }
     
@@ -61,6 +67,15 @@ class BuyViewController: UIViewController, UISearchBarDelegate {
             
             childViewController!.currentUser = currentUser
             childViewController!.searchItem = searchItem
+            childViewController!.sortRequest = sortRequest
+            childViewController!.filterRequest = filterRequest
+            childViewController!.filterRequestMin = filterRequestMin
+            childViewController!.filterRequestMax = filterRequestMax
+        }
+        
+        if (segue.identifier == "FilterSortSegue"){
+            let destination = segue.destination as! FilterSortCollectionViewController
+            destination.currentUser = self.currentUser
         }
         
         // Get the new view controller using segue.destination.
